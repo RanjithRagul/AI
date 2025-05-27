@@ -14,18 +14,19 @@ Calculates the average Hours_Worked
 Calculates the average Tasks_Completed
 Finds the Department with the highest average Satisfaction_Score
 
---------------------------------------
-Sample Excel-like Input and Output
-Input Excel (employee_data.xlsx):
+---------------------------------------------------------------------------
+Sample Input Excel:
 
 Name	Department	Hours_Worked	Tasks_Completed	Satisfaction_Score
-Alice	HR	40	5	8.5
-Bob	IT	45	7	9.2
-Carol	HR	38	6	7.8
-Dave	IT	42	8	9.5
-Eve	Sales	35	4	6.9
---------------------------------------
+Alice	HR		40		5		8.5
+Bob	IT		45		7		9.2
+Carol	HR		38		6		7.8
+Dave	IT		42		8		9.5
+Eve	Sales		35		4		6.9
+---------------------------------------------------------------------------
+Sample Outnput Excel:
+
 Average Hours Worked: 40.0 
 Average Tasks Completed: 6.0
 Department with Highest Satisfaction: IT
---------------------------------------
+---------------------------------------------------------------------------
