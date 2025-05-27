@@ -2,6 +2,7 @@ import pandas as pd
 from openpyxl import load_workbook
 
 def analyze_customer_data(file_path: str) -> None:
+
     # Step 1: Load data from the 'customers' sheet
     df = pd.read_excel(file_path, sheet_name="data")
 
@@ -32,8 +33,9 @@ def analyze_customer_data(file_path: str) -> None:
 
     # Step 6: Save the workbook
     book.save(file_path)
+    return None
 
 
 
 if __name__ == "__main__":
-    analyze_customer_data(r'C:\AI\Part1\1. Understanding dataset structure, sample records\sampledata.xlsx')
+    analyze_customer_data(r'C:\AI\1. Data Exploration and Preprocessing\1. Understanding dataset structure, sample records\sampledata.xlsx')
