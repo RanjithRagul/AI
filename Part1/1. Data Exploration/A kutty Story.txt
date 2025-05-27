@@ -1,5 +1,14 @@
-In a bustling AI research lab, a data scientist named Nia is building a model to predict employee productivity based on early exploratory data from multiple departments. The first step in her AI journey is data exploration, where she needs to summarize the dataset for trends, check missing values, and understand distributions.
+In a bustling AI research lab,
+a data scientist named Nia is building a model to predict employee productivity based on early exploratory data from multiple departments.
+The first step in her AI journey is data exploration,
+where she needs to summarize the dataset for trends,
+check missing values, and understand distributions.
 
-She collects a dataset in Excel containing fields like Name, Department, Hours_Worked, Tasks_Completed, and Satisfaction_Score.
 
-Before jumping into model building, Nia must explore the data and find the average hours worked, average tasks completed, and the department with the highest satisfaction score. Can you help her complete this data exploration step?
+She collects a dataset in Excel containing fields 
+like Name, Department, Hours_Worked, Tasks_Completed, and Satisfaction_Score.
+
+Before jumping into model building, Nia must explore the data 
+and find the average hours worked, average tasks completed,
+and the department with the highest satisfaction score.
+Can you help her complete this data exploration step?

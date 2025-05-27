@@ -20,3 +20,7 @@ def explore_data(file_path: str) -> None:
     print(f"Average Hours Worked: {avg_hours:.1f}")
     print(f"Average Tasks Completed: {avg_tasks:.1f}")
     print(f"Department with Highest Satisfaction: {best_dept}")
+
+
+if __name__ == "__main__":
+    explore_data(r'C:\AI\Part1\1. Data Exploration')
