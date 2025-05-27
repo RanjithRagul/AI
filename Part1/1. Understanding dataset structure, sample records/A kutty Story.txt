@@ -1,0 +1,8 @@
+Imagine you run a small local store and have recently started keeping 
+digital records of your customers' information. One day, you want to understand 
+who your customers are and how much they are spending, 
+so you look at your Excel sheet that stores customer IDs, names, ages, and their last purchase amount.
+
+You want a simple view of the records, 
+like who spent the most, the average age, and total purchase amount, 
+so you can plan offers better.
