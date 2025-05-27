@@ -1,0 +1,30 @@
+Data Exploration & Preprocessing is the process of looking at your raw data 
+to understand its structure, types, and values. 
+It's like browsing a new book to get an idea of the topic before reading deeply.
+
+
+Problem:
+You are given an Excel sheet of customer data for a local store. Your task is to:
+
+1.Read the data.
+2.Print basic information: total customers, average age, total purchase amount.
+3.Identify the customer who spent the most.
+---------------------------------------------------------------------------
+Sample Input Excel:
+
+Sheet Name: customers
+
+CustomerID	Name	Age	PurchaseAmount
+101		Alice	25	250.0
+102		Bob	30	300.5
+103		Charlie	35	150.75
+104		David	40	500.0
+
+---------------------------------------------------------------------------
+Sample Output Excel:
+
+Total Customers: 4
+Average Age: 32.5
+Total Purchase Amount: 1201.25
+Top Spender: David
+---------------------------------------------------------------------------
