@@ -1,0 +1,5 @@
+df["col"].max()   		Maximum value in a column
+df["col"].idxmax() 		Index where the max value occurs
+df.loc[df["col"].idxmax()]  	Full row with the max value
+df.loc[df["col"].idxmax(), "X"]	Specific field "X" from that max row
+df.loc[i]			iTh row in df, can't use df[i] since its as dataFrame
