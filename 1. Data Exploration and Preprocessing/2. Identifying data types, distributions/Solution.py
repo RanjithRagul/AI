@@ -11,7 +11,6 @@ def analyze_data_types_and_distribution(filename):
         data_type = None
         distribution = "N/A"
 
-        sample = col_data.dropna().astype(str).str.strip().str.lower().head(10)
         # Identify data type
         if pd.api.types.is_numeric_dtype(col_data):
             data_type = 'numeric'

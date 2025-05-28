@@ -1,5 +1,19 @@
+P-A1
 df["col"].max()   		Maximum value in a column
 df["col"].idxmax() 		Index where the max value occurs
 df.loc[df["col"].idxmax()]  	Full row with the max value
 df.loc[df["col"].idxmax(), "X"]	Specific field "X" from that max row
 df.loc[i]			iTh row in df, can't use df[i] since its as dataFrame
+
+P-A2
+pd.api.types.is_numeric_dtype(col_data)           	True/False
+pd.api.types.is_datetime64_any_dtype(col_data)		True/False
+pd.api.types.is_bool_dtype(col_data)			True/False
+column.mean()						average
+column.median()						middle value
+column.std						standard deviation, how far midle
+column.min()						minimum
+column.max()						maximum
+abs(mean - median) < 0.1 * std:    ==>                  distribution = 'normal'
+std < 0.1 * (max_val - min_val):   ==>                  distribution = 'uniform'
+else: 				                        distribution = 'skewed'
