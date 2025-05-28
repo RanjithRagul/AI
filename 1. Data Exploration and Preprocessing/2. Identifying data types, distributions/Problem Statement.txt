@@ -1,30 +1,43 @@
-Data Exploration & Preprocessing is the process of looking at your raw data 
-to understand its structure, types, and values. 
-It's like browsing a new book to get an idea of the topic before reading deeply.
+Simple Explanation:
+
+Data Types: Whether a column contains numbers (like price), text (like product category), or booleans (like available or not).
+
+Distributions: Describe how values in a column spread. For example, most prices might fall between 10-20 (normal), or all prices might be around 5 (uniform), or a few high prices skew the average (skewed distribution).
+---------------------------------------------------------------------------
+Problem Name: analyze_data_types_and_distribution
+
+Problem Statement:
+You are given an Excel file containing sales data for a market. Each row contains product 
+details. Write a function analyze_data_types_and_distribution(filename) that:
 
 
-Problem:
-You are given an Excel sheet of customer data for a local store. Your task is to:
-
-1.Read the data.
-2.Print basic information: total customers, average age, total purchase amount.
-3.Identify the customer who spent the most.
+Identifies the data type of each column (numeric, categorical, boolean, or datetime).
+For numeric columns, analyze the distribution:
+If most values cluster around a mean, label as 'normal'
+If values are uniformly spread, label as 'uniform'
+If values are skewed (mean far from median), label as 'skewed'
+Store your results in a new sheet called "result" in the same Excel file, replacing any 
+existing "result" sheet.
 ---------------------------------------------------------------------------
 Sample Input Excel:
 
 Sheet Name: customers
 
-CustomerID	Name	Age	PurchaseAmount
-101		Alice	25	250.0
-102		Bob	30	300.5
-103		Charlie	35	150.75
-104		David	40	500.0
-
+| Product  | Price | Category   | Sold | Rating | Launch Date|
+| -------- | ----- | ---------- | ---- | ------ | ---------- |
+| Apple    | 1.2   | Fruit      | 150  | 4.5    | 2024-01-01 |
+| Banana   | 0.8   | Fruit      | 130  | 4.2    | 2024-01-03 |
+| Shampoo  | 5.5   | Toiletries | 80   | 4.0    | 2024-01-02 |
+| Notebook | 2.0   | Stationery | 100  | 4.7    | 2024-01-01 |
 ---------------------------------------------------------------------------
 Sample Output Excel:
 
-Total Customers: 4
-Average Age: 32.5
-Total Purchase Amount: 1201.25
-Top Spender: David
+| Column Name | Data Type   | Distribution |
+| ----------- | ----------- | ------------ |
+| Product     | categorical | N/A          |
+| Price       | numeric     | normal       |
+| Category    | categorical | N/A          |
+| Sold        | numeric     | normal       |
+| Rating      | numeric     | normal       |
+| Launch Date | datetime    | N/A          |
 ---------------------------------------------------------------------------
