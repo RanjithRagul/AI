@@ -1,22 +1,10 @@
-Imagine you are a manager of a busy neighborhood market. 
-You’re preparing for a big sale and have collected data about your products—price, 
-category, units sold, and ratings. You want to understand your data better 
-to plan the best strategy.
+SuperMart’s Sales Check
 
-But the challenge is: you need to first explore the data to understand 
-what type each column is—like is it a number? a category? 
-Then, figure out how that data is distributed—do prices mostly stay low, 
-or do they vary a lot?
+At SuperMart, the store manager wants to understand customer purchases. 
+They have an Excel sheet where each row shows what was bought, for how much, and by whom.
 
-This process is called data type identification and distribution analysis, 
-and it's one of the first and most crucial steps in AI and machine learning projects. 
-Before feeding data into a model, we must understand it.
-
-
-Simple Explanation:
-Data Types: Whether a column contains numbers (like price), text (like product category), 
-or booleans (like available or not).
-
-Distributions: Describe how values in a column spread. For example, most prices might fall 
-between 10-20 (normal), or all prices might be around 5 (uniform), or a few high prices skew 
-the average (skewed distribution).
+The manager only wants to:
+1. See items with price above ₹100
+2. Remove rows where quantity is missing
+3. And finally calculate the total amount per item (price × quantity)
+This small cleanup will help the store get ready to build a recommendation model later.

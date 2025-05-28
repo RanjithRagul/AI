@@ -1,43 +1,34 @@
-Simple Explanation:
+Filtering and manipulation means:
 
-Data Types: Whether a column contains numbers (like price), text (like product category), or booleans (like available or not).
-
-Distributions: Describe how values in a column spread. For example, most prices might fall between 10-20 (normal), or all prices might be around 5 (uniform), or a few high prices skew the average (skewed distribution).
+Removing bad or missing data (e.g. empty cells)
+Keeping only rows that matter (like price > 100)
+Creating new columns like total price = price × quantity
+This is called data preprocessing, and it's the first step 
+before doing anything smart with AI or machine learning.
 ---------------------------------------------------------------------------
-Problem Name: analyze_data_types_and_distribution
-
 Problem Statement:
-You are given an Excel file containing sales data for a market. Each row contains product 
-details. Write a function analyze_data_types_and_distribution(filename) that:
-
-
-Identifies the data type of each column (numeric, categorical, boolean, or datetime).
-For numeric columns, analyze the distribution:
-If most values cluster around a mean, label as 'normal'
-If values are uniformly spread, label as 'uniform'
-If values are skewed (mean far from median), label as 'skewed'
-Store your results in a new sheet called "result" in the same Excel file, replacing any 
-existing "result" sheet.
+You are given an Excel file with a sheet of sales data. Your task is to:
+Remove rows where Quantity is missing
+Keep only rows where Price > 100
+Create a new column Total = Price * Quantity
+Save the result in a new sheet named "result" in the same Excel file, 
+replacing any old "result" sheet if it exists
 ---------------------------------------------------------------------------
 Sample Input Excel:
 
-Sheet Name: customers
+Sheet Name: sampledata
 
-| Product  | Price | Category   | Sold | Rating | Launch Date|
-| -------- | ----- | ---------- | ---- | ------ | ---------- |
-| Apple    | 1.2   | Fruit      | 150  | 4.5    | 2024-01-01 |
-| Banana   | 0.8   | Fruit      | 130  | 4.2    | 2024-01-03 |
-| Shampoo  | 5.5   | Toiletries | 80   | 4.0    | 2024-01-02 |
-| Notebook | 2.0   | Stationery | 100  | 4.7    | 2024-01-01 |
+| Item  | Price | Quantity |
+| ----- | ----- | -------- |
+| Rice  | 120   | 2        |
+| Sugar | 90    | 1        |
+| Flour | 200   | NaN      |
+| Oil   | 150   | 3        |
 ---------------------------------------------------------------------------
 Sample Output Excel:
 
-| Column Name | Data Type   | Distribution |
-| ----------- | ----------- | ------------ |
-| Product     | categorical | N/A          |
-| Price       | numeric     | normal       |
-| Category    | categorical | N/A          |
-| Sold        | numeric     | normal       |
-| Rating      | numeric     | normal       |
-| Launch Date | datetime    | N/A          |
+| Item | Price | Quantity | Total |
+| ---- | ----- | -------- | ----- |
+| Rice | 120   | 2        | 240   |
+| Oil  | 150   | 3        | 450   |
 ---------------------------------------------------------------------------
