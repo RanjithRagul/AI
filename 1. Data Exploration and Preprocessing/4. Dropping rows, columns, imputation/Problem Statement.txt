@@ -1,34 +1,39 @@
-Filtering and manipulation means:
+Missing data happens when some values in a table are blank or missing.
 
-Removing bad or missing data (e.g. empty cells)
-Keeping only rows that matter (like price > 100)
-Creating new columns like total price = price × quantity
-This is called data preprocessing, and it's the first step 
-before doing anything smart with AI or machine learning.
+To handle it:
+* Drop rows or columns with too many blanks
+* Impute (fill) missing numbers using:
+	1.Mean (average)
+	2.Median (middle value)
+	3.Mode (most frequent value)
+
+This makes your data complete and ready for further use in machine learning, 
+reports, or dashboards.
 ---------------------------------------------------------------------------
 Problem Statement:
-You are given an Excel file with a sheet of sales data. Your task is to:
-Remove rows where Quantity is missing
-Keep only rows where Price > 100
-Create a new column Total = Price * Quantity
-Save the result in a new sheet named "result" in the same Excel file, 
-replacing any old "result" sheet if it exists
+Given an Excel sheet with students' scores:
+Drop rows where all values except Name are missing
+Drop columns where all values are missing
+Fill remaining missing values using mean of that column
+Save the cleaned data in a new sheet called “result”, replacing it if already exists
 ---------------------------------------------------------------------------
 Sample Input Excel:
 
 Sheet Name: sampledata
 
-| Item  | Price | Quantity |
-| ----- | ----- | -------- |
-| Rice  | 120   | 2        |
-| Sugar | 90    | 1        |
-| Flour | 200   | NaN      |
-| Oil   | 150   | 3        |
+| Name  | Math | Science | English |
+| ----- | ---- | ------- | ------- |
+| Anil  | 80   | NaN     | 75      |
+| Priya | NaN  | NaN     | NaN     |
+| Kiran | 90   | 85      | NaN     |
+| Meena | NaN  | 70      | 80      |
+| Rahul |      |         |         |
 ---------------------------------------------------------------------------
 Sample Output Excel:
 
-| Item | Price | Quantity | Total |
-| ---- | ----- | -------- | ----- |
-| Rice | 120   | 2        | 240   |
-| Oil  | 150   | 3        | 450   |
+| Name  | Math | Science | English |
+| ----- | ---- | ------- | ------- |
+| Anil  | 80.0 | 77.5    | 75.0    |
+| Kiran | 90.0 | 85.0    | 77.5    |
+| Meena | 85.0 | 70.0    | 80.0    |
 ---------------------------------------------------------------------------

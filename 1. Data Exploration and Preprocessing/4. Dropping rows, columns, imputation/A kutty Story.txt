@@ -1,10 +1,11 @@
-SuperMart’s Sales Check
+School Report Fix
 
-At SuperMart, the store manager wants to understand customer purchases. 
-They have an Excel sheet where each row shows what was bought, for how much, and by whom.
+Imagine a teacher named Mrs. Anjali who maintains her students’ scores in an Excel sheet. 
+However, some students forgot to write marks in a few subjects, so there are missing values.
 
-The manager only wants to:
-1. See items with price above ₹100
-2. Remove rows where quantity is missing
-3. And finally calculate the total amount per item (price × quantity)
-This small cleanup will help the store get ready to build a recommendation model later.
+Before submitting this sheet to the school head, she needs to clean it:
+
+1.Remove students who skipped all subjects (drop rows).
+2. If a student missed one subject, she’ll fill it using 
+average marks of that subject (mean).
+3.  If a whole subject is empty, she’ll remove the column (drop columns).
