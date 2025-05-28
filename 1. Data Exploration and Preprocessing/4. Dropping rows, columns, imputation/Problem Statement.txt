@@ -1,0 +1,34 @@
+Filtering and manipulation means:
+
+Removing bad or missing data (e.g. empty cells)
+Keeping only rows that matter (like price > 100)
+Creating new columns like total price = price × quantity
+This is called data preprocessing, and it's the first step 
+before doing anything smart with AI or machine learning.
+---------------------------------------------------------------------------
+Problem Statement:
+You are given an Excel file with a sheet of sales data. Your task is to:
+Remove rows where Quantity is missing
+Keep only rows where Price > 100
+Create a new column Total = Price * Quantity
+Save the result in a new sheet named "result" in the same Excel file, 
+replacing any old "result" sheet if it exists
+---------------------------------------------------------------------------
+Sample Input Excel:
+
+Sheet Name: sampledata
+
+| Item  | Price | Quantity |
+| ----- | ----- | -------- |
+| Rice  | 120   | 2        |
+| Sugar | 90    | 1        |
+| Flour | 200   | NaN      |
+| Oil   | 150   | 3        |
+---------------------------------------------------------------------------
+Sample Output Excel:
+
+| Item | Price | Quantity | Total |
+| ---- | ----- | -------- | ----- |
+| Rice | 120   | 2        | 240   |
+| Oil  | 150   | 3        | 450   |
+---------------------------------------------------------------------------

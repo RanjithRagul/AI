@@ -1,0 +1,10 @@
+SuperMart’s Sales Check
+
+At SuperMart, the store manager wants to understand customer purchases. 
+They have an Excel sheet where each row shows what was bought, for how much, and by whom.
+
+The manager only wants to:
+1. See items with price above ₹100
+2. Remove rows where quantity is missing
+3. And finally calculate the total amount per item (price × quantity)
+This small cleanup will help the store get ready to build a recommendation model later.
