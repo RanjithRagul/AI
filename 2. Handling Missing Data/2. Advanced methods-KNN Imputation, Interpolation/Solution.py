@@ -2,8 +2,14 @@ import pandas as pd
 import numpy as np
 from sklearn.impute import KNNImputer
 
-def impute_weather_data(file_path: str, k: int) -> None:
+def impute_weather_data(file_path: str) -> None:
+    k = 5 # kTh near
     df = pd.read_excel(file_path)
+    if np.issubdtype(df['Time'].dtype, np.number):
+        df['Time'] = pd.to_datetime(df['Time'], origin='1899-12-30', unit='d').dt.time
+    else:
+        df['Time'] = pd.to_datetime(df['Time'], format='%H:%M', errors='coerce').dt.time
+    df = df.sort_values(by='Time').reset_index(drop=True)
     df['Temperature'] = df['Temperature'].interpolate(method='linear')
     knn_imputer = KNNImputer(n_neighbors=k)
     df[['Temperature', 'Humidity']] = knn_imputer.fit_transform(df[['Temperature', 'Humidity']])
