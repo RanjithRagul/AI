@@ -1,39 +1,35 @@
-Missing data happens when some values in a table are blank or missing.
+rah has recorded temperature and humidity every hour in an Excel sheet. 
+Due to network issues, some readings are missing (shown as NaN). You must:
 
-To handle it:
-* Drop rows or columns with too many blanks
-* Impute (fill) missing numbers using:
-	1.Mean (average)
-	2.Median (middle value)
-	3.Mode (most frequent value)
-
-This makes your data complete and ready for further use in machine learning, 
-reports, or dashboards.
----------------------------------------------------------------------------
 Problem Statement:
-Given an Excel sheet with students' scores:
-Drop rows where all values except Name are missing
-Drop columns where all values are missing
-Fill remaining missing values using mean of that column
-Save the cleaned data in a new sheet called “result”, replacing it if already exists
+Read the Excel sheet.
+Fill the missing values using:
+KNN for humidity (based on temperature).
+Interpolation for temperature (based on time).
+Save the updated data in a new sheet called "result" (replace if already exists).
 ---------------------------------------------------------------------------
 Sample Input Excel:
 
 Sheet Name: sampledata
 
-| Name  | Math | Science | English |
-| ----- | ---- | ------- | ------- |
-| Anil  | 80   | NaN     | 75      |
-| Priya | NaN  | NaN     | NaN     |
-| Kiran | 90   | 85      | NaN     |
-| Meena | NaN  | 70      | 80      |
-| Rahul |      |         |         |
+| Time  | Temperature | Humidity |
+| ----- | ----------- | -------- |
+| 00:00 | 22.5        | 55       |
+| 01:00 | NaN         | 56       |
+| 02:00 | 23.1        | NaN      |
+| 03:00 | 23.3        | 60       |
+| 04:00 | NaN         | NaN      |
+| 05:00 | 24.0        | 58       |
+
 ---------------------------------------------------------------------------
 Sample Output Excel:
 
-| Name  | Math | Science | English |
-| ----- | ---- | ------- | ------- |
-| Anil  | 80.0 | 77.5    | 75.0    |
-| Kiran | 90.0 | 85.0    | 77.5    |
-| Meena | 85.0 | 70.0    | 80.0    |
+| Time  | Temperature | Humidity |
+| ----- | ----------- | -------- |
+| 00:00 | 22.5        | 55.0     |
+| 01:00 | 22.8        | 56.0     |
+| 02:00 | 23.1        | 57.0     |
+| 03:00 | 23.3        | 60.0     |
+| 04:00 | 23.65       | 59.0     |
+| 05:00 | 24.0        | 58.0     |
 ---------------------------------------------------------------------------

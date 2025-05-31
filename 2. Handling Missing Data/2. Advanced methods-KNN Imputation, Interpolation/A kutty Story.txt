@@ -1,11 +1,12 @@
-School Report Fix
+Sarah runs a weather monitoring station in her town. Every hour, her sensors record 
+temperature and humidity. However, due to occasional signal issues, some values are missing 
+in her data.
 
-Imagine a teacher named Mrs. Anjali who maintains her students’ scores in an Excel sheet. 
-However, some students forgot to write marks in a few subjects, so there are missing values.
+Sarah needs accurate data for her monthly climate report. To fill the missing values, she 
+uses two smart techniques:
 
-Before submitting this sheet to the school head, she needs to clean it:
+KNN Imputation: Fills missing values using the most similar nearby data points.
 
-1.Remove students who skipped all subjects (drop rows).
-2. If a student missed one subject, she’ll fill it using 
-average marks of that subject (mean).
-3.  If a whole subject is empty, she’ll remove the column (drop columns).
+Interpolation: Fills gaps using trends from surrounding values (like connecting dots on a 
+graph).
+
