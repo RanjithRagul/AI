@@ -1,12 +1,12 @@
-Sarah runs a weather monitoring station in her town. Every hour, her sensors record 
-temperature and humidity. However, due to occasional signal issues, some values are missing 
-in her data.
+Imagine a small clinic keeps records of patient checkups in an Excel sheet. 
+One of the columns is "Smoker" — whether the patient is a smoker or not. 
+Some rows have missing data, while others say "Yes" or "No".
 
-Sarah needs accurate data for her monthly climate report. To fill the missing values, she 
-uses two smart techniques:
+Now, the clinic is building a small system to analyze patterns in health based on 
+whether a patient smokes. But the computer doesn’t understand words like “Yes” or “No” — 
+it works best with numbers.
 
-KNN Imputation: Fills missing values using the most similar nearby data points.
-
-Interpolation: Fills gaps using trends from surrounding values (like connecting dots on a 
-graph).
-
+So we decide to convert this "Smoker" column into indicator variables:
+1 for "Yes"
+0 for "No"
+And maybe NaN (missing) stays as is for now

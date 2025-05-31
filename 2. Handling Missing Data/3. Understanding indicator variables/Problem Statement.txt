@@ -1,35 +1,31 @@
-rah has recorded temperature and humidity every hour in an Excel sheet. 
-Due to network issues, some readings are missing (shown as NaN). You must:
+Indicator Variables, also known as dummy variables, are numeric (usually 0 or 1) values used to represent categorical data. They're commonly used when preparing data for machine learning or statistical models.
 
-Problem Statement:
-Read the Excel sheet.
-Fill the missing values using:
-KNN for humidity (based on temperature).
-Interpolation for temperature (based on time).
-Save the updated data in a new sheet called "result" (replace if already exists).
+For example:
+"Yes" → 1
+"No" → 0
+
 ---------------------------------------------------------------------------
+Given an Excel file with a column that contains categorical responses like "Yes", "No", or missing values, convert this column into an indicator variable column (1 for "Yes", 0 for "No", NaN stays as is). Save the modified data into a new sheet called "result" in the same Excel file.
+
 Sample Input Excel:
 
 Sheet Name: sampledata
 
-| Time  | Temperature | Humidity |
-| ----- | ----------- | -------- |
-| 00:00 | 22.5        | 55       |
-| 01:00 | NaN         | 56       |
-| 02:00 | 23.1        | NaN      |
-| 03:00 | 23.3        | 60       |
-| 04:00 | NaN         | NaN      |
-| 05:00 | 24.0        | 58       |
-
+| Patient_ID  | Smoker |
+| ----------- | ------ |
+| 001         | Yes    |
+| 002         | No     |
+| 003         | Yes    |
+| 004         |        |
+| 005         | No     |
 ---------------------------------------------------------------------------
 Sample Output Excel:
 
-| Time  | Temperature | Humidity |
-| ----- | ----------- | -------- |
-| 00:00 | 22.5        | 55.0     |
-| 01:00 | 22.8        | 56.0     |
-| 02:00 | 23.1        | 57.0     |
-| 03:00 | 23.3        | 60.0     |
-| 04:00 | 23.65       | 59.0     |
-| 05:00 | 24.0        | 58.0     |
+| Patient\_ID | Smoker | Smoker_Indicator |
+| ----------- | ------ | ----------------- |
+| 001         | Yes    | 1                 |
+| 002         | No     | 0                 |
+| 003         | Yes    | 1                 |
+| 004         |        | NaN               |
+| 005         | No     | 0                 |
 ---------------------------------------------------------------------------
