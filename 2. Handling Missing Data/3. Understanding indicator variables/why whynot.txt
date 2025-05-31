@@ -1,0 +1,53 @@
+What is KNN and Interpolation?
+1. KNN Imputation (K-Nearest Neighbors)
+* KNN stands for K-Nearest Neighbors.
+* It looks at the 'K' most similar rows (neighbors) that have complete data.
+* Then it fills in the missing value using the average value from those neighbors.
+
+Think of it like this:
+If Sarah's humidity sensor missed a reading at 2 AM, KNN looks for other time points with similar temperatures and fills in the missing humidity based on those similar points.
+
+
+
+2. Interpolation
+* Interpolation fills missing values by drawing a line between known values and 
+  estimating the ones in between.
+* Linear interpolation assumes the values change at a constant rate between points.
+
+Example:
+If temperature at 12 AM is 22.5 and at 2 AM is 23.1, and 1 AM is missing, 
+linear interpolation will assume a straight increase and fill 1 AM as 22.8.
+
+
+
+❓Why KNN for Humidity and Interpolation for Temperature?
+Humidity: Use KNN
+Humidity is more non-linear and depends on other factors like temperature, time, 
+and weather conditions.
+
+Using KNN helps capture patterns in the data by looking at similar temperature profiles.
+KNN adapts better when there's no clear trend, and values vary based on multiple variables.
+🌡️ Temperature: Use Interpolation
+Temperature changes over time are usually smooth and gradual.
+It follows a natural, predictable trend — day/night cycles, weather patterns.
+That makes interpolation (especially linear) a good fit.
+We can safely assume that if 2 points are known, the value between them is somewhere 
+in the middle.
+
+📐 Why Use Linear Interpolation?
+Linear interpolation is used because:
+Simplicity – Easy to compute and interpret.
+Smooth transitions – Temperature usually doesn’t change drastically in short time spans.
+Predictable patterns – It assumes change is steady, which is often true for temperature 
+in hourly intervals.
+Better than forward/backward fill – It uses both previous and next values, not just 
+one direction.
+
+Summary
+* Humidity	
+* KNN Imputer	
+* Depends on other variables (e.g., temperature); more scattered data
+
+* Temperature	
+* Linear Interpolation
+* Follows smooth trend over time; steady, predictable changes

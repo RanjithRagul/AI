@@ -1,0 +1,35 @@
+rah has recorded temperature and humidity every hour in an Excel sheet. 
+Due to network issues, some readings are missing (shown as NaN). You must:
+
+Problem Statement:
+Read the Excel sheet.
+Fill the missing values using:
+KNN for humidity (based on temperature).
+Interpolation for temperature (based on time).
+Save the updated data in a new sheet called "result" (replace if already exists).
+---------------------------------------------------------------------------
+Sample Input Excel:
+
+Sheet Name: sampledata
+
+| Time  | Temperature | Humidity |
+| ----- | ----------- | -------- |
+| 00:00 | 22.5        | 55       |
+| 01:00 | NaN         | 56       |
+| 02:00 | 23.1        | NaN      |
+| 03:00 | 23.3        | 60       |
+| 04:00 | NaN         | NaN      |
+| 05:00 | 24.0        | 58       |
+
+---------------------------------------------------------------------------
+Sample Output Excel:
+
+| Time  | Temperature | Humidity |
+| ----- | ----------- | -------- |
+| 00:00 | 22.5        | 55.0     |
+| 01:00 | 22.8        | 56.0     |
+| 02:00 | 23.1        | 57.0     |
+| 03:00 | 23.3        | 60.0     |
+| 04:00 | 23.65       | 59.0     |
+| 05:00 | 24.0        | 58.0     |
+---------------------------------------------------------------------------

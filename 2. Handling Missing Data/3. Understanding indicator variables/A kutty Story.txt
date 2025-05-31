@@ -1,0 +1,12 @@
+Sarah runs a weather monitoring station in her town. Every hour, her sensors record 
+temperature and humidity. However, due to occasional signal issues, some values are missing 
+in her data.
+
+Sarah needs accurate data for her monthly climate report. To fill the missing values, she 
+uses two smart techniques:
+
+KNN Imputation: Fills missing values using the most similar nearby data points.
+
+Interpolation: Fills gaps using trends from surrounding values (like connecting dots on a 
+graph).
+
