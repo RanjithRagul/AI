@@ -1,0 +1,11 @@
+School Report Fix
+
+Imagine a teacher named Mrs. Anjali who maintains her students’ scores in an Excel sheet. 
+However, some students forgot to write marks in a few subjects, so there are missing values.
+
+Before submitting this sheet to the school head, she needs to clean it:
+
+1.Remove students who skipped all subjects (drop rows).
+2. If a student missed one subject, she’ll fill it using 
+average marks of that subject (mean).
+3.  If a whole subject is empty, she’ll remove the column (drop columns).
