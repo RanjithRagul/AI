@@ -1,7 +1,7 @@
 import pandas as pd
 
 def date_and_time(file_path: str) -> None:
-    # playing with date and time
+    # playing with date and time (panda only can handle 1677 to 2262 year)
     df = pd.read_excel(file_path)
     df['date_time'] = pd.to_datetime(df['date_time'], format='%m-%d-%Y %H:%M:%S', errors='coerce')
     df['year'] = df['date_time'].dt.year
