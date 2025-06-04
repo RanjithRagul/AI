@@ -20,3 +20,5 @@ else: 				                        distribution = 'skewed'
 
 df.coloumn						get header of each column
 df[c] <== for c in df.column				get all the values with head 'c'
+
+temp
