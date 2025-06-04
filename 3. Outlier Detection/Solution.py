@@ -1,18 +1,28 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import zscore
 import openpyxl
 
-def scale_features(file_path: str) -> None:
+def detect_outliers(file_path):
     df = pd.read_excel(file_path, sheet_name=0)
-    std_scaler = StandardScaler()
-    minmax_scaler = MinMaxScaler()
-    robust_scaler = RobustScaler()
-    df['height_scaled'] = std_scaler.fit_transform(df[['height']])
-    df['weight_scaled'] = minmax_scaler.fit_transform(df[['weight']])
-    df['income_scaled'] = robust_scaler.fit_transform(df[['income']])
+    df['Z_score'] = zscore(df['Sales'])
+    df['Z_outlier'] = df['Z_score'].abs() > 3
+    Q1 = df['Sales'].quantile(0.25)
+    Q3 = df['Sales'].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    df['IQR_outlier'] = (df['Sales'] < lower_bound) | (df['Sales'] > upper_bound)
+    plt.figure(figsize=(6, 4))
+    plt.boxplot(df['Sales'])
+    plt.title("Boxplot of Apple Sales")
+    plt.ylabel("Sales")
+    plt.grid(True)
+    plt.savefig("boxplot_sales.png")  # Save image if needed
+    plt.close()
     with pd.ExcelWriter(file_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
         df.to_excel(writer, sheet_name='result', index=False)
 
-
 if __name__ == "__main__":
-    scale_features(r'C:\AI\3. Outlier Detection\sampledata.xlsx')
+    detect_outliers(r'C:\AI\3. Outlier Detection\sampledata.xlsx')
