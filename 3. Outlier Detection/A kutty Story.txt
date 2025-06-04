@@ -1,0 +1,3 @@
+Imagine you're organizing a marathon with runners from around the world. Some runners report their speed in kilometers per hour (km/h), others in miles per hour (mph), and some in meters per second (m/s). To compare everyone fairly, you need to convert all speeds to the same unit.
+
+Similarly, in machine learning, features (like height, weight, income, age, etc.) come in different units and scales. If we don’t scale them, models like linear regression or KNN might treat larger numbers as more important, which can lead to poor results.

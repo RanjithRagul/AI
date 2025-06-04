@@ -1,0 +1,36 @@
+3 Types of Scaling (Like 3 Ways to Make Everyone Play Fair)
+
+1. 🎓 Standardization (Z-Score Scaling)
+* What it does: Makes all numbers have a center at 0 and spread out evenly.
+* How? Subtract the average (mean), then divide by how much the numbers vary (standard deviation).
+* Like saying: “How far is your height from the average height?”
+* Use this when: Your data is balanced (no huge outliers).
+* It looks like a bell curve (normal distribution).
+
+2. Min-Max Scaling
+* What it does: Shrinks all values to be between 0 and 1.
+* How? Subtract the smallest number, divide by the range (biggest - smallest).
+* Like saying:“Let’s make the smallest score 0 and the biggest score 1 — everything else in between!”
+* Use this when: You need all features on the same scale (like in neural networks).
+*Your data is in a known range without crazy outliers.
+
+3. Robust Scaling
+* What it does: Ignores extreme numbers (outliers).
+* How? Uses the middle number (median) and the range between the middle 50% (called IQR).
+* Like saying:“I don’t care if someone is 1000 cm tall — that’s just weird.”
+* Use this when: Your data has crazy values that don’t happen often (like one super rich kid).
+* You want to be less sensitive to outliers.
+
+| Scaling Type    | Best For                  | Ignores Outliers?   | Range After Scaling       |
+| --------------- | ------------------------- | -----------------   | ------------------------- |
+| Standardization | Normal-shaped data        | ❌ No              | Centered at 0 (not fixed) |
+| Min-Max Scaling | When you need fixed range | ❌ No              | 0 to 1                    |
+| Robust Scaling  | When data has outliers    | ✅ Yes             | Around 0 (not fixed)      |
+
+
+
+| Scenario                               | Use This Scaling |
+| -------------------------------------- | ---------------- |
+| Predicting height from weights and age | Standardization  |
+| Feeding data into a neural network     | Min-Max          |
+| Income prediction with rich outliers   | Robust Scaling   |
